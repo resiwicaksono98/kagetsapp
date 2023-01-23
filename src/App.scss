@@ -1,0 +1,25 @@
+
+$theme-colors: (
+  'main' : #349B3F,
+  'purple': #674294,
+  'yellow': #FFE909,
+  'pink': #E7267A
+);
+
+.bg-history{
+  &:hover{
+    background-color: #ECECEC;
+  }
+}
+
+.bg-news{
+  color: black;
+  &:hover{
+    color:#0d6efd
+  }
+}
+
+
+
+
+@import "node_modules/bootstrap/scss/bootstrap";
