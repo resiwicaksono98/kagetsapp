@@ -2,7 +2,7 @@
 
 import React from "react";
 import { Container, Image, Row, Col, Button, Stack } from "react-bootstrap";
-import HomepageImage from "../assets/images/Homepage-image.png";
+import HomepageImage from "../assets/images/homepage-image.png";
 import HomepageBottom from "../assets/images/Homepage-bottom.png";
 import { Link } from "react-router-dom";
 
