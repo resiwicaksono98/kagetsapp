@@ -13,16 +13,16 @@ function App() {
 
    useEffect(() => {
       const checkAuth = async () => {
-         dispatch(refreshAccessToken());
+         dispatch(refreshAccessToken(refreshToken));
          if (accessToken) {
             try {
                // Cek apakah access token masih valid
-               await dispatch(getMe(accessToken));
+               dispatch(getMe(accessToken));
             } catch (error) {
                // Jika access token tidak valid, gunakan refresh token untuk memperbaharui access token
-               await dispatch(refreshAccessToken(refreshToken));
+               dispatch(refreshAccessToken(refreshToken));
                //     // Cek kembali apakah access token yang baru saja diperbaharui masih valid
-               await dispatch(getMe(accessToken));
+               dispatch(getMe(accessToken));
             }
          }
       };
