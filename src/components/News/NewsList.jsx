@@ -8,6 +8,7 @@ import { HttpRequest } from "../../utils/axiosInstance";
 
 export default function NewsList() {
    const [newst, setNewst] = useState([]);
+   const cloudURL = import.meta.env.VITE_CLOUDINARY;
 
    useEffect(() => {
       const getNews = async () => {
@@ -42,7 +43,7 @@ export default function NewsList() {
                <Link to={`/news/${news.id}`} className="text-decoration-none bg-news">
                   <Stack className="mt-5" key={i}>
                      <Stack direction="horizontal" gap={3}>
-                        <Image src={`http://localhost:5000/images/news/${news.image}`} height={200} width={300} />
+                        <Image src={`${cloudURL}${news.image}`} height={200} width={300} />
                         <Stack className=" my-auto" gap={3}>
                            <div className="fs-4 fw-bold">{news.title}</div>
                            <div className="fs-5 fw-light">{news.description.length >= 50 ? news.description.slice(0, 300) + "...." + " Baca lebih lanjut" : ""}</div>

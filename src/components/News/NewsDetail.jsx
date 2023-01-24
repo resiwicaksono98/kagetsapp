@@ -10,6 +10,7 @@ import { HttpRequest } from "../../utils/axiosInstance";
 export default function NewsDetail() {
    const { id } = useParams();
    const [newst, setNewst] = useState([]);
+   const cloudURL = import.meta.env.VITE_CLOUDINARY;
 
    useEffect(() => {
       const getNews = async () => {
@@ -26,7 +27,7 @@ export default function NewsDetail() {
                   <div className="fs-3 fw-bold">{news.title}</div>
                   <div className="my-4 fs-5 fw-light">GoCar / 16 April 2022</div>
                   <div className="d-flex justify-content-center mb-4">
-                     <Image src={`http://localhost:5000/images/news/${news.image}`} height={500} width={800} />
+                     <Image src={`${cloudURL}${news.image}`} height={500} width={800} />
                   </div>
                   <div className="my-4">{news.description}</div>
                </Container>

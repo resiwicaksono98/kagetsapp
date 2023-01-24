@@ -13,7 +13,7 @@ function App() {
 
    useEffect(() => {
       const checkAuth = async () => {
-         dispatch(refreshAccessToken());
+         //  dispatch(refreshAccessToken());
          if (accessToken) {
             try {
                // Cek apakah access token masih valid

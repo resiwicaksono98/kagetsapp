@@ -43,7 +43,7 @@ export const refreshAccessToken = createAsyncThunk("user/refreshToken", async (u
       const res = await HttpRequest.get("/token");
       return res.data;
    } catch (error) {
-      thunkAPI.dispatch(setError(error));
+      console.log(error);
    }
 });
 
